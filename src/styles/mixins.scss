@@ -1,0 +1,11 @@
+@mixin phone {
+    @media (max-width: 599px) { @content; }
+}
+
+
+$color-blue-text: rgb(166, 190, 202);
+$color-blue: rgb(75, 144, 226);
+$color-grey: rgb(118, 118, 118);
+$color-grey-light: rgb(213, 213, 213);
+$color-green: rgb(185, 233, 135);
+$color-red: rgb(251, 47, 47);

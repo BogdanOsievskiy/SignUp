@@ -1,0 +1,40 @@
+.form-navigation {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid $color-grey;
+    opacity: 1;
+    transition: opacity 0.4s ease 0s;
+    box-sizing: border-box;
+    &.hidden {
+        opacity: 0;
+    }
+    button {
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        padding: 5px 10px;
+        background: none;
+        border: none;
+        color: $color-grey;
+        position: relative;
+        outline: none;
+        transform: scale(1);
+        transition: transform 0.4s ease 0s;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &.button-next {
+            
+            color: $color-blue;
+        }
+        i{
+           position: relative;
+           top: 0px;
+           padding: 0 0 0 5px;
+           font-size: 16px;
+       }
+    }
+}

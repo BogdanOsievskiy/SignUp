@@ -1,0 +1,162 @@
+.screen-two {
+    padding: 30px 20px;
+    &.animate {
+        .screen-item{
+            p {
+               opacity: 1;
+            }
+        } 
+        .input-row,.gender-select, .drop-wrapp {
+           opacity: 1;
+        }
+    }
+}
+
+.screen-item {
+    text-align: center;
+    &.error {
+        p {
+            color: $color-red;
+        }
+    }
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: $color-grey;
+        opacity: 0;
+        transition: color 0.4s ease 0s, opacity 0.4s ease 0s;
+    }
+    .input-row {
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.4s ease 0.5s;
+    }
+    input {
+        display: flexbox;
+        flex-grow: 1;
+        text-align: center;
+        height: 40px;
+        font-family: 'Roboto', sans-serif;
+        outline: none;
+        border: 1px solid $color-grey;
+        box-sizing: border-box;
+        padding: 0;
+        border-right: none;
+        &:last-child {
+            border-right: 1px solid $color-grey;
+        }
+       
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+    }
+}
+.gender-select {
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.5s;
+    button {
+        flex-grow: 1;
+        height: 40px;
+        -webkit-appearance: none; 
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        outline: none;
+        background: transparent;
+        color: #000;
+        transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
+        border: 1px solid $color-grey;
+        border-right: none;
+        width: 33.3%;
+        cursor: pointer;
+        &:hover {
+            background: $color-green;
+        }
+        &:last-child {
+            border-right: 1px solid $color-grey;
+        }
+        &.active {
+            background: $color-blue;
+            color: #fff;
+        }
+    }
+}
+.drop-wrapp {
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.5s;
+    &.open {
+        .drop-list {
+            display: flex;
+        }
+        .drop-btn {
+            transform: translate(0, -50%) rotate(180deg);
+            
+        }
+    }
+    input {
+        width: 100%;
+        text-align: left;
+        padding: 0 10px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        box-sizing: border-box;
+        border: 1px solid $color-grey;
+    }
+    .drop-btn {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%) rotate(0deg);
+        transform-origin: center; 
+        -webkit-appearance: none; 
+        outline: none;
+        background: none;
+        border: none;
+        width: 30px;
+        height: 20px;
+        transition: transform 0.4s ease 0s;
+        cursor: pointer;
+        i {
+            display: block;
+            position: relative;
+            font-size: 26px;
+            top: -10px;
+            left: 5px;
+            transform: rotate(180deg);
+            transform-origin: center; 
+            color: $color-blue;
+        }
+    }
+    .drop-list {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background: #fff;
+        z-index: 3;
+        top: 100%;
+        border: 1px solid $color-grey;
+        box-sizing: border-box;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif;
+
+        display: none;
+        button {
+            border: none;
+            background: none;
+            flex-grow: 1;
+            border-bottom: 1px solid $color-grey;
+            font-size: 18px;
+            -webkit-appearance: none; 
+            outline: none;
+            cursor: pointer;
+            padding: 5px 0;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

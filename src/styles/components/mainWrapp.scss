@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+}
+
+.sign-form_wrapp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 527px; 
+    border: 1px solid $color-grey;
+    border-radius: 5px; 
+    @include phone {
+        position: relative;
+        width: 95%;
+        margin: 0 auto;
+        transform: none;
+        top: 20px;
+        left: inherit;
+
+    }
+}

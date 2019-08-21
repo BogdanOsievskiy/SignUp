@@ -2,11 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {Provider} from 'react-redux';
+import { createStore } from 'redux';
 import * as serviceWorker from './serviceWorker';
+import rootReducer from './store/reducers/index';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// create store with screenView and user info.
+// To use redux dev tools, add second param  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__().
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+ReactDOM.render(
+    // Added provider, to have acces to store for all app 
+    <Provider store={store}>
+        <App />
+    </Provider>, 
+    document.getElementById('root')
+);
+
+
 serviceWorker.unregister();

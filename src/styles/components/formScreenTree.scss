@@ -1,0 +1,64 @@
+.screen-three {
+    position: relative;
+    height: calc(100% - 77px);
+}
+.screen-three_wrapp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &.animated {
+        .validation-path {
+            opacity: 1;
+            i {
+                opacity: 1;
+            }
+        }
+        .dashbord-btn {
+            opacity: 1;
+        }
+    }
+    
+}
+.validation-path {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 40px auto;
+    border-radius: 50%;
+    background: $color-green;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.4s ease 0s;
+    i {
+        display: block;
+        color: #fff;
+        position: absolute;
+        font-size: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.4s ease 0.5s;
+    }
+}
+.dashbord-btn {
+    display: inline-block;
+    color: $color-blue;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: none;
+    border-color: $color-blue;
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 0.4s ease-in-out 0.8s, transform 0.4s ease 0s;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+    }
+    .icon-arrow-right2 {
+        position: relative;
+        padding: 0 0 0 10px;
+        top: 2px;
+    }
+}
